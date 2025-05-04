@@ -1,0 +1,1 @@
+# ieee-vip-cup-2025-multimodal-uav-detection-tracking-and-payload-identification
