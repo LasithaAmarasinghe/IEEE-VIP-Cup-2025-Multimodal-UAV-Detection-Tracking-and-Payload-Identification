@@ -23,7 +23,7 @@ Team Name: Cogniview
   - Dinuka Madhushan 
   - Dilsha Mihiranga
   - Chandeepa Peiris
-  - Dr.Wageesha Manamperi (Supervisor, University of Moratuwa, SPS Member)
+  - Dr.Wageesha Manamperi (Supervisor, University of Moratuwa)
   - Muditha Fernando (Postgraduate)
     
 
