@@ -1,0 +1,1 @@
+- trained for YOLOV8, YOLOV10, YOLOV12 models. 30 epoches each
