@@ -1,4 +1,4 @@
-# IEEE Signal Processing Society - Video & Image Processing Cup - Drone Detection-Tracking-and-Payload-Identification Challenge
+# IEEE Signal Processing Society - Video & Image Processing Cup 2025 - Drone Detection-Tracking-and-Payload-Identification Challenge
 
 ## 📌 Project Overview  
 This repository contains **Team Cogniview’s** solution for the **IEEE SPS VIP CUP 2025**.  
