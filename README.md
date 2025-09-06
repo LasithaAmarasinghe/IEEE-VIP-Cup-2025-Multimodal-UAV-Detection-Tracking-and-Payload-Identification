@@ -143,21 +143,22 @@ Overall, our methodology ensures **robust multimodal fusion**, **high-precision 
 
 ### 🚁 Drone Detection – RGB Only  
 <p align="center">
-  <img src="Results/drone_detection_rgb/confusion_matrix.png" alt="RGB Confusion Matrix" width="325"/>
-  <img src="Results/drone_detection_rgb/val_batch0_pred.jpg" alt="RGB Detection Sample 1" width="300"/>
-  <img src="Results/drone_detection_rgb/val_batch1_pred.jpg" alt="RGB Detection Sample 2" width="300"/>
-</p>  
+  <img src="Results/drone_detection_rgb/confusion_matrix.png" alt="RGB Confusion Matrix" style="width:33%; max-width:325px;"/>
+  <img src="Results/drone_detection_rgb/val_batch0_pred.jpg" alt="RGB Detection Sample 1" style="width:33%; max-width:300px;"/>
+  <img src="Results/drone_detection_rgb/val_batch1_pred.jpg" alt="RGB Detection Sample 2" style="width:33%; max-width:300px;"/>
+</p>
 <p align="center">
   Confusion Matrix | Detection Example 1 | Detection Example 2
-</p>  
+</p>
+  
 
 ---
 
 ### 🚁 Drone Detection – IR Only  
 <p align="center">
-  <img src="Results/drone_detect_ir/confusion_matrix.png" alt="IR Confusion Matrix" width="325"/>
-  <img src="Results/drone_detect_ir/val_batch0_pred.jpg" alt="IR Detection Sample 1" width="300"/>
-  <img src="Results/drone_detect_ir/val_batch1_pred.jpg" alt="IR Detection Sample 2" width="300"/>
+  <img src="Results/drone_detect_ir/confusion_matrix.png" alt="IR Confusion Matrix" style="width:33%; max-width:325px;"/>
+  <img src="Results/drone_detect_ir/val_batch0_pred.jpg" alt="IR Detection Sample 1" style="width:33%; max-width:300px;"/>
+  <img src="Results/drone_detect_ir/val_batch1_pred.jpg" alt="IR Detection Sample 2" style="width:33%; max-width:300px;"/>
 </p>  
 <p align="center">
   Confusion Matrix | Detection Example 1 | Detection Example 2
@@ -167,9 +168,9 @@ Overall, our methodology ensures **robust multimodal fusion**, **high-precision 
 
 ### 🚁 Drone Detection – RGB + IR Fusion  
 <p align="center">
-  <img src="Results/drone_detect_fuse/confusion_matrix.png" alt="Fusion Confusion Matrix" width="325"/>
-  <img src="Results/drone_detect_fuse/val_batch0_pred.jpg" alt="Fusion Detection Sample 1" width="300"/>
-  <img src="Results/drone_detect_fuse/val_batch1_pred.jpg" alt="Fusion Detection Sample 2" width="300"/>
+  <img src="Results/drone_detect_fuse/confusion_matrix.png" alt="Fusion Confusion Matrix" style="width:33%; max-width:325px;"/>
+  <img src="Results/drone_detect_fuse/val_batch0_pred.jpg" alt="Fusion Detection Sample 1" style="width:33%; max-width:300px;"/>
+  <img src="Results/drone_detect_fuse/val_batch1_pred.jpg" alt="Fusion Detection Sample 2" style="width:33%; max-width:300px;"/>
 </p>  
 <p align="center">
   Confusion Matrix | Detection Example 1 | Detection Example 2
