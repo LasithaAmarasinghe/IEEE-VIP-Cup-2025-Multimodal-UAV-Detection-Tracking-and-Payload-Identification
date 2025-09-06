@@ -6,6 +6,11 @@ This repository contains **Team Cogniview’s** solution for the **IEEE SPS VIP 
 Our system is designed to **detect, track, and classify drones and their payloads in real time** using **multimodal fusion of RGB and infrared (IR) imagery**. By leveraging advanced deep learning models, we address the limitations of single-modality approaches and enhance robustness under **low light, fog, occlusion, motion blur,** and other challenging environmental conditions.  
 
 ---
+
+<p align="center">
+  <img src="Results/video.gif" alt="Demo GIF" />
+</p>
+
   
 ## 🎯 Challenge Description  
 
