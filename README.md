@@ -142,21 +142,14 @@ Overall, our methodology ensures **robust multimodal fusion**, **high-precision 
 ---
 
 ### 🚁 Drone Detection – RGB Only  
-<div style="text-align:center; width:100%;">
-  <div style="display:inline-block; width:32%; margin:0 1%;">
-    <img src="Results/drone_detection_rgb/confusion_matrix.png" alt="RGB Confusion Matrix" style="width:100%;"/>
-    <div>Confusion Matrix</div>
-  </div>
-  <div style="display:inline-block; width:32%; margin:0 1%;">
-    <img src="Results/drone_detection_rgb/val_batch0_pred.jpg" alt="Detection Example 1" style="width:100%;"/>
-    <div>Detection Example 1</div>
-  </div>
-  <div style="display:inline-block; width:32%; margin:0 1%;">
-    <img src="Results/drone_detection_rgb/val_batch1_pred.jpg" alt="Detection Example 2" style="width:100%;"/>
-    <div>Detection Example 2</div>
-  </div>
-</div>
-  
+<p align="center"> 
+  <img src="Results/drone_detection_rgb/confusion_matrix.png" alt="RGB Confusion Matrix" width="325"/> 
+  <img src="Results/drone_detection_rgb/val_batch0_pred.jpg" alt="RGB Detection Sample 1" width="300"/> 
+  <img src="Results/drone_detection_rgb/val_batch1_pred.jpg" alt="RGB Detection Sample 2" width="300"/> 
+</p>
+<p align="center">
+  Confusion Matrix | Detection Example 1 | Detection Example 2
+</p>  
 
 ---
 
