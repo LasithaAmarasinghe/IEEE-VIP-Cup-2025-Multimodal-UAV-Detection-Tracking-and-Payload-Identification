@@ -65,14 +65,56 @@ The challenge dataset includes:
 ---
 
 ## ⚙️ Methodology  
-Our solution integrates multiple components to ensure **high detection accuracy, robust tracking, and efficient real-time performance**:  
 
-- **Multimodal Fusion** – Implemented **Y-shape Dynamic Transformer (YDTR)** to combine RGB and IR features for improved detection robustness.  
-- **Object Detection** – Used **YOLOv8/YOLOv10** for high-precision drone and bird detection.  
-- **Multi-Object Tracking** – Integrated **BoT-SORT** for persistent ID tracking and motion analysis.  
-- **Motion Behavior Analysis** – Designed algorithm to determine whether a drone is **approaching or receding** from the camera.  
-- **Payload Classification** – Built RGB-IR early-fusion CNN classifier to identify **harmful vs. benign payloads** with **>99% F1-score**.  
-- **Performance Optimization** – Achieved **25–30 FPS** on GPU with low latency and high scalability for real-world deployment.  
+Our solution integrates multiple deep learning and computer vision components to ensure **high detection accuracy**, **robust tracking**, and **efficient real-time performance**. The pipeline is modular, supporting independent evaluation of RGB, IR, and fused modalities, as required by the competition.  
+
+### 1. Multimodal Fusion  
+- Implemented a **Y-shape Dynamic Transformer (YDTR)** to fuse features from RGB and IR images.  
+- RGB branch captures **textural and spatial details**, while IR branch captures **thermal signatures** that remain robust under poor visibility.  
+- Features are merged using a **Dynamic Transformer Module (DTRM)**, which models long-range dependencies and aligns semantic features across modalities.  
+- This fusion significantly improves detection and classification under **low light, fog, occlusion, and motion blur**.  
+
+### 2. Object Detection  
+- Adopted **YOLOv8** and **YOLOv10** as backbone detectors due to their balance of **accuracy and inference speed**.  
+- Three parallel models are trained as required by the competition:  
+  - **RGB-only detector**  
+  - **IR-only detector**  
+  - **RGB-IR fusion detector (YDTR + YOLO)**  
+- Standard preprocessing: resizing to **320×256**, normalization, and heavy augmentations (**flips, jitter, blur, noise**) for robustness.  
+- Evaluation metrics: **Precision, Recall, F1-score, mAP@50, mAP@50–95**.  
+
+### 3. Multi-Object Tracking  
+- Integrated **BoT-SORT** (ByteTrack with appearance embeddings) for robust ID association across frames.  
+- Enhancements include:  
+  - **Kalman filtering** for trajectory prediction.  
+  - **Deque-based buffers** to store object history for smoother velocity and area change estimation.  
+  - **Adaptive windowing** (5–20 frames) to reduce noise and jitter in real-time tracking.  
+- Achieved **>90% tracking persistence**, even under occlusion and camera instability.  
+
+### 4. Motion Behavior Analysis  
+- Developed a **trajectory analysis algorithm** to determine whether a drone is **approaching** or **receding** from the field of view.  
+- Classification based on:  
+  - **Change in bounding box size (area growth/shrinkage)**  
+  - **Velocity vectors** relative to the camera.  
+- Real-time visualization overlays: bounding boxes, IDs, velocity trails, and approach/recede labels.  
+
+### 5. Payload Classification  
+- Built a **RGB-IR early-fusion CNN classifier** with stacked channel inputs.  
+- Architecture:  
+  - 3 × convolutional layers with **ReLU + BatchNorm**  
+  - 2 × fully connected layers  
+  - Softmax for final classification  
+- Task: Distinguish **harmful payloads** (explosives, contraband, surveillance devices) from **normal payloads**.  
+- Achieved **>99% F1-score** and **0.9947 mAP@50–95** on the validation dataset.  
+
+### 6. Performance Optimization  
+- Real-time efficiency optimized through:  
+  - **Lazy evaluation & caching** to minimize redundant computations.  
+  - **Batch normalization & lightweight CNN backbones** for reduced inference cost.  
+  - **Mixed precision inference** (FP16) on GPU.  
+- Achieved **25–30 FPS** on GPU with minimal latency, making the system deployable in real-world scenarios.  
+
+Overall, our methodology ensures **robust multimodal fusion**, **high-precision detection**, **persistent tracking**, and **accurate payload identification**, while meeting the **real-time performance requirements** of the IEEE SPS VIP Cup 2025.  
 
 ---
 
