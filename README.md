@@ -69,10 +69,20 @@ The challenge dataset includes:
 Our solution integrates multiple deep learning and computer vision components to ensure **high detection accuracy**, **robust tracking**, and **efficient real-time performance**. The pipeline is modular, supporting independent evaluation of RGB, IR, and fused modalities, as required by the competition.  
 
 ### 1. Multimodal Fusion  
+We implemented **two fusion strategies** to combine RGB and IR modalities:  
+
+**(a) Early Fusion – Y-shape Dynamic Transformer (YDTR)**  
 - Implemented a **Y-shape Dynamic Transformer (YDTR)** to fuse features from RGB and IR images.  
-- RGB branch captures **textural and spatial details**, while IR branch captures **thermal signatures** that remain robust under poor visibility.  
-- Features are merged using a **Dynamic Transformer Module (DTRM)**, which models long-range dependencies and aligns semantic features across modalities.  
-- This fusion significantly improves detection and classification under **low light, fog, occlusion, and motion blur**.  
+- The **RGB branch** captures fine-grained **textural and spatial details**, while the **IR branch** extracts **thermal signatures** that remain robust under poor visibility.  
+- Features from both branches are merged in a **Dynamic Transformer Module (DTRM)**, which models **long-range dependencies** and aligns semantic features across modalities.  
+- The fused representation is then passed into a YOLO-based detector for classification of drones vs. birds.  
+- This approach significantly improves detection and classification performance under **low light, fog, occlusion, motion blur, and camera instability**.  
+
+**(b) Late Fusion – Decision-Level Fusion**  
+- Object detection is performed **independently** on RGB-only and IR-only pipelines using YOLOv8.  
+- Each modality produces bounding boxes, class labels, and confidence scores.  
+- The results are then merged using **Non-Maximum Suppression (NMS)** to remove redundant detections and consolidate final predictions.  
+- This method allows the system to **fall back on the stronger modality** in cases where one modality is heavily degraded (e.g., RGB in dense fog or IR in thermal clutter).  
 
 ### 2. Object Detection  
 - Adopted **YOLOv8** and **YOLOv10** as backbone detectors due to their balance of **accuracy and inference speed**.  
