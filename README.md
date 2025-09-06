@@ -141,6 +141,75 @@ Overall, our methodology ensures **robust multimodal fusion**, **high-precision 
 
 ---
 
+### 🚁 Drone Detection – RGB Only  
+<p align="center">
+  <img src="Results/drone_detection_rgb/confusion_matrix.png" alt="RGB Confusion Matrix" width="325"/>
+  <img src="Results/drone_detection_rgb/val_batch0_pred.jpg" alt="RGB Detection Sample 1" width="300"/>
+  <img src="Results/drone_detection_rgb/val_batch1_pred.jpg" alt="RGB Detection Sample 2" width="300"/>
+</p>  
+<p align="center">
+  Confusion Matrix | Detection Example 1 | Detection Example 2
+</p>  
+
+---
+
+### 🚁 Drone Detection – IR Only  
+<p align="center">
+  <img src="Results/drone_detect_ir/confusion_matrix.png" alt="IR Confusion Matrix" width="325"/>
+  <img src="Results/drone_detect_ir/val_batch0_pred.jpg" alt="IR Detection Sample 1" width="300"/>
+  <img src="Results/drone_detect_ir/val_batch1_pred.jpg" alt="IR Detection Sample 2" width="300"/>
+</p>  
+<p align="center">
+  Confusion Matrix | Detection Example 1 | Detection Example 2
+</p>  
+
+---
+
+### 🚁 Drone Detection – RGB + IR Fusion  
+<p align="center">
+  <img src="Results/drone_detect_fuse/confusion_matrix.png" alt="Fusion Confusion Matrix" width="325"/>
+  <img src="Results/drone_detect_fuse/val_batch0_pred.jpg" alt="Fusion Detection Sample 1" width="300"/>
+  <img src="Results/drone_detect_fuse/val_batch1_pred.jpg" alt="Fusion Detection Sample 2" width="300"/>
+</p>  
+<p align="center">
+  Confusion Matrix | Detection Example 1 | Detection Example 2
+</p>  
+
+---
+
+### 📦 Payload Classification – RGB Only  
+<p align="center">
+  <img src="Results/payload_rgb/confusion_matrix.png" alt="RGB Payload Confusion Matrix" width="450"/>
+  <img src="Results/payload_rgb/val_batch2_labels.jpg" alt="RGB Payload Sample" width="350"/>
+</p>  
+<p align="center">
+  Confusion Matrix | Classification Example
+</p>  
+
+---
+
+### 📦 Payload Classification – IR Only  
+<p align="center">
+  <img src="Results/payload_ir/confusion_matrix.png" alt="IR Payload Confusion Matrix" width="450"/>
+  <img src="Results/payload_ir/val_batch2_labels.jpg" alt="IR Payload Sample" width="350"/>
+</p>  
+<p align="center">
+  Confusion Matrix | Classification Example
+</p>  
+
+---
+
+### 📦 Payload Classification – RGB + IR Fusion  
+<p align="center">
+  <img src="Results/payload_fused/confusion_matrix.png" alt="Fusion Payload Confusion Matrix" width="450"/>
+  <img src="Results/payload_fused/val_batch1_pred.jpg" alt="Fusion Payload Sample" width="350"/>
+</p>  
+<p align="center">
+  Confusion Matrix | Classification Example
+</p>  
+
+---
+
 ## 🚀 Applications  
 This system demonstrates strong potential for:  
 - **Security & Defense** – Perimeter and airspace monitoring  
